@@ -4,7 +4,8 @@ on:
   push:
     branches: [main]
     paths:
-      - 'slides/**'
+      - 'slides/**/*.md'
+      - 'slides/**/*.png'
   workflow_dispatch:
 
 jobs:
