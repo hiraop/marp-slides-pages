@@ -1,0 +1,32 @@
+name: Build Marp Slide
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'slides/**/*.md'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+
+      - run: npm install -g @marp-team/marp-cli
+
+      - run: |
+          mkdir -p docs
+          for file in slides/*.md; do
+            filename=$(basename "$file" .md)
+            marp "$file" --html --output "docs/$filename.html"
+          done
+
+      - uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs
