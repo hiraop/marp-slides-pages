@@ -157,7 +157,7 @@ theme: default
 ---
 
 ## AIが生成したMarpスライド（手修正なし）
-[情報過多にサヨナラ！RSSHubで作る自分だけの情報収集システム](./rsshub-presentation.html)
+[情報過多にサヨナラ！RSSHubで作る自分だけの情報収集システム](./sub-slide.html)
 
 
 ---
@@ -220,7 +220,7 @@ theme: default
 
 ## この発表自体もこの方法で作りました
 
-![このスライドの生成方法](this-slide-generation.png)
+![](this-slide-generation.png)
 
 ---
 
