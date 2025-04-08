@@ -26,6 +26,8 @@ jobs:
             filename=$(basename "$file" .md)
             marp "$file" --html --output "docs/$filename.html"
           done
+          # PNGファイルをdocsディレクトリにコピー
+          cp slides/*.png docs/
 
       - uses: peaceiris/actions-gh-pages@v4
         with:
